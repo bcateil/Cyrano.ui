@@ -11,19 +11,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-
     <title>Cyrano.AI</title>
   </head>
   <body>
 
-  <br />
-    <form action="/action_page.php" align="center"> <!-- action_page.php is a form handling service; replace with where input needs to be redirected to when made -->
-      Input: <input type="text" name="userInput">
-      <br>
-      <input type="submit" value="Submit">
-    </form>
 
-    <!-- how to call text when done: var x = document.getElementById("myText"); -->
+    <h3>Cyrano.AI</h3>
+
+    <input type="text" id="myText" value="How are you feeling?">
+
+    <button onclick="myFunction()">Submit</button>
+
+    <p id="userInput"></p>
+
+<!-- Output -->
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myText").value;
+      document.getElementById("userInput").innerHTML = x;
+    }
+    </script>
+
 
   </body>
 </html>

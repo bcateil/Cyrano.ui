@@ -21,3 +21,13 @@ $(document).ready(function(){
 		} // End if
 	});
 });
+
+function othername() {
+    var input = document.getElementById("userInput").value;
+    alert(input);
+}
+$( document ).ready(function() {
+    $('#name').change(function(){
+        $('#message').html('Hello ' + $('#name').val());
+    });
+});
