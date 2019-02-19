@@ -18,20 +18,14 @@
 
     <h3>Cyrano.AI</h3>
 
-    <input type="text" id="myText" value="How are you feeling?">
 
-    <button onclick="myFunction()">Submit</button>
-
-    <p id="userInput"></p>
-
-<!-- Output -->
-
-    <script>
-    function myFunction() {
-      var x = document.getElementById("myText").value;
-      document.getElementById("userInput").innerHTML = x;
-    }
-    </script>
+  <!-- Getting Input by Setting Dummy Text-->
+    <form action='/analyze'>
+      <textarea type="text" name="input" style="width:300px; height:400px;"></textarea>
+      <br/>
+      <button type="reset" value="Reset">Restart</button>
+      <button onclick="/analyze">Continue</button>
+    </form>
 
 
   </body>
