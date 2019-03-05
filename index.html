@@ -26,11 +26,14 @@
 
   <!-- Getting Input by Setting Dummy Text-->
     <form action='/analyze' method="POST" value="How are you feeling?">
-      <textarea type="text" name="input" style="width:300px; height:400px;" placeholder="How are you feeling?"></textarea>
+      <textarea type="text" name="input" placeholder="How are you feeling?" style="height:20em; width:20em;"></textarea>
       <br/>
-      <button type="reset" value="Reset">Restart</button>
-      <button onclick="/analyze">Continue</button>
+      <button type="reset" value="Reset" style="align-content: left">Restart</button>
+
+      <button style="align-self: right;" onclick="/analyze">Continue</button>
     </form>
+
+<div id="colorstrip"/>
 
   </center>
   </body>
