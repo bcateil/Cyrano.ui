@@ -31,9 +31,18 @@ nav {
   opacity: 0.9;
 }
 
-.navbar-custom-color {
-  background-color: null;
+button {
+  background-color: #678B94; /* Green */
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
+
 .rectangle {
   width: 100%;
   overflow: auto;
@@ -53,4 +62,12 @@ nav {
     font-size: 30px;
     font-family: courier;
     opacity:1;
+}
+
+textarea{
+  font-family: 'Arial', sans-serif;
+  font-weight: 200: 4rem;
+  font-size: 1rem;
+  margin-bottom: -15px
+  color: #3B5C66;
 }

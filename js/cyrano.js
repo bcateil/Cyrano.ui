@@ -1,33 +1,36 @@
-$(document).ready(function(){
-  $("li a").on('click', function(event) {
+var options = {
+            chart: {
+                height: 350,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    dataLabels: {
+                        name: {
+                            fontSize: '22px',
+                        },
+                        value: {
+                            fontSize: '16px',
+                        },
+                        total: {
+                            show: true,
+                            label: 'Total',
+                            formatter: function (w) {
+                                // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                                return 249
+                            }
+                        }
+                    }
+                }
+            },
+            series: [44, 55, 67, 83],
+            labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
 
-		// Make sure this.hash has a value before overriding default behavior
-		if (this.hash !== "") {
-		  // Prevent default anchor click behavior
-		  event.preventDefault();
+        }
 
-		  // Store hash
-		  var hash = this.hash;
+       var chart = new ApexCharts(
+            document.querySelector("#chart"),
+            options
+        );
 
-		  // Using jQuery's animate() method to add smooth page scroll
-		  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-		  $('html, body').animate({
-		    scrollTop: $(hash).offset().top
-		  }, 800, function(){
-
-		    // Add hash (#) to URL when done scrolling (default click behavior)
-		    window.location.hash = hash;
-		  });
-		} // End if
-	});
-});
-
-function othername() {
-    var input = document.getElementById("userInput").value;
-    alert(input);
-}
-$( document ).ready(function() {
-    $('#name').change(function(){
-        $('#message').html('Hello ' + $('#name').val());
-    });
-});
+        chart.render();

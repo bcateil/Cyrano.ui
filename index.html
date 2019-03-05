@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width">
   <meta name="author" content="TeamCyrano.UI">
   <meta name="description" content="Web Application">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
@@ -8,25 +9,29 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" >
   <link rel="stylesheet" href="css/cyranoStyleGuide.css">
   <!-- Javascript Files (toggle, smooth scroll, slider) -->
+  <script src="js/cyrano.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <title>Cyrano.AI</title>
   </head>
-  <body>
+  <body><center>
 
 
-    <h3>Cyrano.AI</h3>
+    <img src="content/cyrano-logo-w125-3dark.png" alt="Cyrano.AI">
 
+<h1>
+
+</h1>
 
   <!-- Getting Input by Setting Dummy Text-->
-    <form action='/analyze'>
-      <textarea type="text" name="input" style="width:300px; height:400px;"></textarea>
+    <form action='/analyze' method="POST" value="How are you feeling?">
+      <textarea type="text" name="input" style="width:300px; height:400px;" placeholder="How are you feeling?"></textarea>
       <br/>
       <button type="reset" value="Reset">Restart</button>
       <button onclick="/analyze">Continue</button>
     </form>
 
-
+  </center>
   </body>
 </html>
