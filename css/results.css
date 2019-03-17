@@ -1,0 +1,109 @@
+/*  just some container styles */
+body, html { height: 100%; }
+body { display: flex; align-items: center; justify-content: center; }
+
+/*
+
+  Radial Graph Settings
+
+  - size:       .radial-graph, .shape, .mask, and .fill will all need
+                to receive the same width & height properties. Then
+                .mask and .fill need to have their clip property set
+                accordingly.
+
+  - width:      The stroke width is made by just placing a "cutout" shape
+                on top, and can be sized and positioned as you like (or removed).
+
+  - progress:   adjust the .fill.shim rotation to a percentage of
+                the total radius, and then the .mask.full-mask & .fill
+                rotations to a value of half of that. See inline
+                comments below for the formulas.
+
+*/
+
+.radial-graph,
+.shape,
+.mask,
+.fill {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+}
+
+.shape,
+.mask,
+.fill {
+  position: absolute;
+  background-color: #ebeff1;
+}
+
+.mask,
+.fill {
+  -webkit-backface-visibility: hidden;
+  transition: transform 1s;
+  border-radius: 50%;
+}
+
+.mask {
+  clip: rect(0px, 220px, 220px, 110px);
+}
+.fill {
+  clip: rect(0px, 110px, 220px, 0px);
+  background-color: #50e3c2;
+}
+
+.cutout {
+  margin-left: 15px;
+  margin-top: 15px;
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  background-color: white;
+  border-radius: 100%;
+}
+/* DEGREE OF RADIAL GRAPH. STYLE IS SET  IN HTML*/
+.mask.full-mask,
+.fill {
+  /*
+    For a value of 90%
+    0.9 * 360  / 2
+  */
+}
+.fill.shim {
+  /*
+    For a value of 90%
+    0.9 * 360
+  */
+}
+/****************************************************/
+.start .mask.full-mask,
+.start .fill {
+  /*
+    For a value of 40%
+    0.4 * 360  / 2
+  */
+  transform: rotate(0deg);
+}
+.start .fill.shim {
+  /*
+    For a value of 40%
+    0.4 * 360
+  */
+  transform: rotate(0deg);
+}
+
+.end .mask.full-mask,
+.end .fill {
+  /*
+    For a value of 81%
+    0.81 * 360  / 2
+  */
+  transform: rotate(145.8deg);
+}
+.end .fill.shim {
+  /*
+    For a value of 81%
+    0.81 * 360
+  */
+  transform: rotate(291.6deg);
+}
